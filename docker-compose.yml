@@ -24,7 +24,7 @@ services:
     build: ./backend
     restart: always
     ports:
-      - 8080:8080
+      - 9090:9090
     depends_on:
       - iotdb
 
@@ -41,3 +41,12 @@ services:
     restart: always
     expose:
       - 6667
+  nginx:
+    image: nginx
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf
+    ports:
+      - "8085:80"
+    environment:
+      - NGINX_PORT=80
+    restart: always
