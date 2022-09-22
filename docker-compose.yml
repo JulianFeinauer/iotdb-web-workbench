@@ -24,12 +24,20 @@ services:
     build: ./backend
     restart: always
     ports:
-      - 8081:8080
+      - 8080:8080
+    depends_on:
+      - iotdb
 
   frontend:
     build: ./frontend
     restart: always
     ports:
-      - 8080:8080
+      - 8081:8080
     depends_on:
       - backend
+
+  iotdb:
+    image: apache/iotdb:0.13.2-node
+    restart: always
+    expose:
+      - 6667

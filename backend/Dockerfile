@@ -17,12 +17,19 @@
 # under the License.
 #
 
+FROM maven:3.8.2-amazoncorretto-8 as builder
+
+WORKDIR /app
+
+COPY . .
+
+RUN mvn package -Dcheckstyle.skip
 
 
-
-FROM openjdk:8-jdk-oracle
+FROM openjdk:20-slim
 
 COPY --from=builder /app/target/workbench-1.0.0.jar /app/workbench-1.0.0.jar
+# COPY target/service-1.0.0.jar /app/app.jar
 
 EXPOSE 8080
 

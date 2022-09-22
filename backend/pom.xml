@@ -197,33 +197,33 @@
         </executions>
       </plugin>
 
-      <plugin>
-        <groupId>com.diffplug.spotless</groupId>
-        <artifactId>spotless-maven-plugin</artifactId>
-        <version>${spotless.version}</version>
-        <configuration>
-          <java>
-            <googleJavaFormat>
-              <version>1.7</version>
-              <style>GOOGLE</style>
-            </googleJavaFormat>
-            <importOrder>
-              <order>org.apache.iotdb,,javax,java,\#</order>
-            </importOrder>
-            <removeUnusedImports/>
-          </java>
-          <lineEndings>UNIX</lineEndings>
-        </configuration>
-        <executions>
-          <execution>
-            <id>spotless-check</id>
-            <phase>validate</phase>
-            <goals>
-              <goal>check</goal>
-            </goals>
-          </execution>
-        </executions>
-      </plugin>
+<!--      <plugin>-->
+<!--        <groupId>com.diffplug.spotless</groupId>-->
+<!--        <artifactId>spotless-maven-plugin</artifactId>-->
+<!--        <version>${spotless.version}</version>-->
+<!--        <configuration>-->
+<!--          <java>-->
+<!--            <googleJavaFormat>-->
+<!--              <version>1.7</version>-->
+<!--              <style>GOOGLE</style>-->
+<!--            </googleJavaFormat>-->
+<!--            <importOrder>-->
+<!--              <order>org.apache.iotdb,,javax,java,\#</order>-->
+<!--            </importOrder>-->
+<!--            <removeUnusedImports/>-->
+<!--          </java>-->
+<!--          <lineEndings>UNIX</lineEndings>-->
+<!--        </configuration>-->
+<!--        <executions>-->
+<!--          <execution>-->
+<!--            <id>spotless-check</id>-->
+<!--            <phase>validate</phase>-->
+<!--            <goals>-->
+<!--              <goal>check</goal>-->
+<!--            </goals>-->
+<!--          </execution>-->
+<!--        </executions>-->
+<!--      </plugin>-->
     </plugins>
 
   </build>
