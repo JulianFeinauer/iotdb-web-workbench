@@ -21,6 +21,7 @@ import moduleA from './moduleA';
 import axios from '@/util/axios.js';
 // import storage from './storage';
 import dataBaseM from './dataBaseM';
+import { ElMessage } from 'element-plus';
 
 export default createStore({
   state: () => ({
@@ -41,17 +42,23 @@ export default createStore({
   },
   actions: {
     async fetchIsLogin({ commit }) {
-      axios.get('/get', {}).then((res) => {
-        if (res?.code === '0') {
-          commit('setLogin', true);
-          commit('setUserInfo', {
-            data: {
-              name: res?.data?.name,
-              userId: res?.data?.id,
-            },
-          });
-        }
-      });
+      axios
+        .get('/get', {})
+        .then((res) => {
+          if (res?.code === '0') {
+            commit('setLogin', true);
+            commit('setUserInfo', {
+              data: {
+                name: res?.data?.name,
+                userId: res?.data?.id,
+              },
+            });
+          }
+        })
+        .catch(() => {
+          // ElMessage.error('网络错误');
+          ElMessage.error('A Network error occured');
+        });
     },
   },
   modules: {

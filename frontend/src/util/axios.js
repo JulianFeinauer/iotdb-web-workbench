@@ -79,7 +79,6 @@ instance.interceptors.response.use(
     }
   },
   (error) => {
-    ElMessage.error('网络错误');
     return Promise.reject(error);
   }
 );
