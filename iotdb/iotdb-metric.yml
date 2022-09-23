@@ -41,6 +41,7 @@ predefinedMetrics:
   - FILE
   - PROCESS
   - SYSTEM
+  - LOGBACK
 
 # The period of the collection of some metrics in asynchronous way, such as tsfile size.
 asyncCollectPeriodInSecond: 5
