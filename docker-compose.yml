@@ -39,8 +39,13 @@ services:
   iotdb:
     image: apache/iotdb:0.13.2-node
     restart: always
+    volumes:
+      - ./iotdb/iotdb-metric.yml:/iotdb/conf/iotdb-metric.yml
     expose:
       - 6667
+    ports:
+      - 9091:9091
+
   nginx:
     image: nginx
     volumes:

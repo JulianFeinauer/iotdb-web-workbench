@@ -141,13 +141,13 @@ export default {
           },
           trigger: 'change',
         },
-        {
-          pattern: /^(((2[0-4]\d|25[0-5]|[01]?\d\d?)\.){3}(2[0-4]\d|25[0-5]|[01]?\d\d?))|(localhost)$/,
-          message: () => {
-            return t(`sourcePage.hostErrorTip`);
-          },
-          trigger: 'change',
-        },
+        // {
+        //   pattern: /^(((2[0-4]\d|25[0-5]|[01]?\d\d?)\.){3}(2[0-4]\d|25[0-5]|[01]?\d\d?))|(localhost)$/,
+        //   message: () => {
+        //     return t(`sourcePage.hostErrorTip`);
+        //   },
+        //   trigger: 'change',
+        // },
         // {
         //   pattern: /^localhost$/,
         //   message: t(`sourcePage.hostErrorTip`),
@@ -224,16 +224,16 @@ export default {
      * source can test successful
      */
     const testConnect = () => {
-      let patternReg = /^(((2[0-4]\d|25[0-5]|[01]?\d\d?)\.){3}(2[0-4]\d|25[0-5]|[01]?\d\d?))|(localhost)$/;
+      // let patternReg = /^(((2[0-4]\d|25[0-5]|[01]?\d\d?)\.){3}(2[0-4]\d|25[0-5]|[01]?\d\d?))|(localhost)$/;
       let portReg = /^([0-9]|[1-9]\d|[1-9]\d{2}|[1-9]\d{3}|[1-5]\d{4}|6[0-4]\d{3}|65[0-4]\d{2}|655[0-2]\d|6553[0-5])$/;
       if (!form.host) {
         ElMessage.error(t(`sourcePage.hostEmptyTip`));
         return false;
       }
-      if (!patternReg.test(form.host)) {
-        ElMessage.error(t(`sourcePage.hostErrorTip`));
-        return false;
-      }
+      // if (!patternReg.test(form.host)) {
+      //   ElMessage.error(t(`sourcePage.hostErrorTip`));
+      //   return false;
+      // }
 
       if (!form.port) {
         ElMessage.error(t(`sourcePage.portEmptyTip`));

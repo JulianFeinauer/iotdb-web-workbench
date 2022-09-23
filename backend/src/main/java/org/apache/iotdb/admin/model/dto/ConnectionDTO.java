@@ -33,10 +33,10 @@ import java.io.Serializable;
 public class ConnectionDTO implements Serializable {
 
   @NotBlank(message = "The host address cannot be empty or null")
-  @Pattern(
-      regexp =
-          "^((2(5[0-5]{1}|[0-4]\\d{1})|[0-1]?\\d{1,2})(\\.(2(5[0-5]{1}|[0-4]\\d{1})|[0-1]?\\d{1,2})){3})|(localhost)$",
-      message = "The host is invalid")
+//   @Pattern(
+//       regexp =
+//           "^((2(5[0-5]{1}|[0-4]\\d{1})|[0-1]?\\d{1,2})(\\.(2(5[0-5]{1}|[0-4]\\d{1})|[0-1]?\\d{1,2})){3})|(localhost)$",
+//       message = "The host is invalid")
   private String host;
 
   @NotNull(message = "The port number cannot be null")
