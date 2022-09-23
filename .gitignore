@@ -10,4 +10,4 @@ build/
 *.txt
 target/
 *.versionsBackup
-
+.DS_Store
