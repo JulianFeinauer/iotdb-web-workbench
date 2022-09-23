@@ -27,7 +27,8 @@ enablePerformanceStat: false
 metricReporterList:
   - JMX
   - PROMETHEUS
-  - IOTDB
+# Seems to be buggy, disbale by now
+#  - IOTDB
 
 # Type of monitor frame, options: [MICROMETER, DROPWIZARD]
 monitorType: MICROMETER
