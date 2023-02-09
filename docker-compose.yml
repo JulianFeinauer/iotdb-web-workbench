@@ -44,7 +44,7 @@ services:
     expose:
       - 6667
     ports:
-      - 9091:9091
+      - 9092:9091
 
   nginx:
     image: nginx
@@ -55,3 +55,17 @@ services:
     environment:
       - NGINX_PORT=80
     restart: always
+
+  prometheus:
+    image: prom/prometheus:v2.37.1
+    restart: always
+    ports:
+      - 9091:9090
+    command:
+      - '--config.file=/etc/prometheus/prometheus.yml'
+    volumes:
+      - ./prometheus/:/etc/prometheus/
+      - prometheus_data:/prometheus
+
+volumes:
+  prometheus_data: {}
